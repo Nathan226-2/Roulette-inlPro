@@ -1,13 +1,26 @@
 const draairadKnop = document.querySelector("#draairadKnop")
 const getalEl = document.querySelector('#getal-el')
 const kleurEl = document.querySelector('#kleur-el')
+const kiesnummerKnop = document.querySelector('#kiesNummer') 
+const gekozenNummerSelect = document.querySelector('#gekozenNummer') 
+
 const geluidCasino = new Audio("./audio/casinomuziek.mp3")
 const geluidVerliezen = new Audio("./audio/verliezen.mp3")
 const geluidWinnen = new Audio("./audio/winnen.mp3")
 const geluidRoulette = new Audio("./audio/roulette.mp3")
 
+let gekozenNummer = []
 let wiel = document.querySelector('#wiel')
 
+
+function nummerKiezen() {
+    gekozenNummer = parseInt(gekozenNummerSelect.value); // Zet de waarde om naar een getal
+    if (!isNaN(gekozenNummer)) {
+        console.log(`Je hebt nummer ${gekozenNummer} gekozen!`);
+    } else {
+        console.log("Kies een geldig nummer.");
+    }
+}
 
 function draaiRad() {
     geluidRoulette.play()
@@ -36,7 +49,15 @@ function draaiRad() {
         kleurEl.textContent = "Getrokken kleur: " + kleur
     }
     console.log(kleur)
-}
-    
 
-draairadKnop.addEventListener('click', draaiRad)
+    if (gekozenNummer === randomNummer) {
+        geluidWinnen.play()
+    } else {
+        geluidVerliezen.play()
+    }
+    }
+
+    
+kiesnummerKnop.addEventListener('click', nummerKiezen);
+draairadKnop.addEventListener('click', draaiRad);
+
