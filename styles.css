@@ -8,24 +8,73 @@ body{
     margin: 0;
 }
 
-button{
-    padding: 2em;
-    margin: 1em;
-    background-color: goldenrod;
-    border: none; 
-    border-radius: 0.5em;
+button {
+    background-color: #222;  
+    color: gold;  
+    font-size: 18px;  
+    font-weight: bold;
+    border: 2px solid gold;  
+    padding: 12px 20px;
+    border-radius: 8px;  
+    cursor: pointer;
+    outline: none;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(255, 215, 0, 0.4); 
+}
+
+button:hover {
+    background-color: #333;
+    border-color: #ffcc00;
+    color: #ffcc00;
+    box-shadow: 0px 4px 15px rgba(255, 204, 0, 0.7);
+}
+
+button:focus {
+    background-color: #444;
+    border-color: #ffdd44;
+    color: #ffdd44;
+    box-shadow: 0px 4px 15px rgba(255, 215, 0, 0.9);
+}
+
+select {
+    background-color: #222;  
+    color: gold;  
+    font-size: 18px;  
+    font-weight: bold;
+    border: 2px solid gold;  
+    padding: 12px 16px;
+    border-radius: 8px;  
+    cursor: pointer;
+    outline: none;  
+    text-align: center;
+    width: 200px; 
+    transition: all 0.3s ease-in-out;
+}
+
+select:hover {
+    background-color: #333;
+    border-color: #ffcc00;
+    color: #ffcc00;
+}
+
+select:focus {
+    background-color: #444;
+    border-color: #ffdd44;
+    color: #ffdd44;
+    box-shadow: 0px 0px 10px rgba(255, 204, 0, 0.7);
 }
 
 h1{
     font-size: 5em;
     -webkit-text-stroke-width: 0.02em;
-    -webkit-text-stroke-color: white;
+    -webkit-text-stroke-color: #ffcc00;
 }
 
 p{
     font-size: 3em;
     -webkit-text-stroke-width: 0.02em;
-    -webkit-text-stroke-color: white;
+    -webkit-text-stroke-color: #ffcc00;
 }
 
 

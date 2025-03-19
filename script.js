@@ -20,7 +20,7 @@ const geluidError = new Audio("./audio/error.mp3")
 
 let heeftnummerGekozen = false
 let gekozenNummer = null;
-let beginDraai = 0
+
 
 
 //bron: https://www.youtube.com/watch?v=XE67z9vmbgo//
@@ -38,10 +38,9 @@ function nummerKiezen() {
     }
 }
 
-
-
 function draaiRad() {
     let kleur;
+    
 
     if (heeftnummerGekozen === false) {
         geluidError.play()
@@ -49,12 +48,13 @@ function draaiRad() {
         return; 
     }  
 
-
+    draairadKnop.disabled = true
     geluidRoulette.play()
     let randomNummer = Math.floor(Math.random()*37)
     let draaiHoek = (randomNummer / 37) * 360 + (5 * 360);
     wiel.style.transition = "transform 3s ease-out";
     wiel.style.transform = `rotate(${draaiHoek}deg)`;
+   
 
     //https://github.com/BerendJanssen/COOPA-jump/blob/main/script/script.js timer functie die wacht tot het balletje gerold is//
     setTimeout(function () {
@@ -77,9 +77,23 @@ function draaiRad() {
         } else {
             geluidVerliezen.play()
         }
+        setTimeout(resetSpel, 5000,)
     }, 6000)
     } 
 
+function resetSpel() {  
+    gekozenEl.textContent = "gekozen nummer:"
+    getalEl.textContent = "getrokken nummer:"
+    kleurEl.textContent = "getrokken kleur:"
+
+    wiel.style.transition = "none"; // Voorkom animatie bij reset
+    wiel.style.transform = "rotate(0deg)"; // Terug naar beginstand
+
+    heeftnummerGekozen = false;
+    gekozenNummer = null;
+    gekozennummerOpties.value = ""; // Reset de dropdown naar lege optie
+    draairadKnop.disabled = false;
+}
 
 kiesnummerKnop.addEventListener('click', nummerKiezen);
 draairadKnop.addEventListener('click', draaiRad);
