@@ -64,6 +64,7 @@ select:focus {
     color: #ffdd44;
     box-shadow: 0px 0px 10px rgba(255, 204, 0, 0.7);
 }
+/*De css voor de button en select heb ik met chatgpt gedaan, https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://chatgpt.com/g/g-3bxChvw71-link&ved=2ahUKEwj0tqWmuZaMAxX3hP0HHU5EGB4QFnoECAkQAQ&usg=AOvVaw2Maxz7BWeVbFVc0b1vI7i3*/
 
 h1{
     font-size: 5em;
